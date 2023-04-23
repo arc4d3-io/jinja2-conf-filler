@@ -14,7 +14,7 @@ Este script processa templates Jinja2 usando variáveis JSON, podendo executar m
 1. Clone o repositório:
 
    ```
-   git clone https://github.com/pedroanisio/jinja2-conf-filler.git
+   git clone https://github.com/arc4d3-io/jinja2-conf-filler
    ```
 
 2. Crie um ambiente virtual e ative-o:
