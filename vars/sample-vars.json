@@ -1,0 +1,8 @@
+{
+    "lan":{       
+         "private_nameserves":["192.168.1.1","192.168.2.1"],
+         "public_nameservers":["1.1.1.1","1.0.0.1"],         
+         "domains":["example.com.","sample.com"],
+         "ptr_ips":["1.168.192","2.168.192"]
+    }
+}

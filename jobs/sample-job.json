@@ -1,0 +1,21 @@
+{
+    "jobs":[
+        {
+            "job_name":"unboud",
+            "output_dir":"unbound",
+            "steps":[
+                {
+                    "template":"sample-unbound-forwards.j2",
+                    "output": "public-dns-forwards.conf"
+                },
+                {
+                    "template":"sample-unbound-lan-domains.j2",
+                    "output": "privatelan-domains.conf"
+                },
+                {
+                    "template":"sample-unbound-lan-reverse.j2",
+                    "output": "reverse-lan-domains.conf"
+                }      
+            ]
+        }]
+}

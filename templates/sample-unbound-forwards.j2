@@ -1,0 +1,5 @@
+server:
+  forward-zone:
+      name: "."
+    {% for ns in lan.public_nameservers %}  forward-addr: {{ ns }}
+    {% endfor %}   

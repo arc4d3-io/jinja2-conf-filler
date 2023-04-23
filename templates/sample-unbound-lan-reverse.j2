@@ -1,0 +1,5 @@
+server:{% for ip in lan.ptr_ips %}
+  forward-zone:
+      name: "{{ ip }}.in-addr.arpa."
+    {% for ns in lan.private_nameserves %}  forward-addr: {{ ns }}
+    {% endfor %}{% endfor %}    
