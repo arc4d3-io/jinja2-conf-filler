@@ -1,7 +1,18 @@
 import argparse
 import json
 import os
+import ipaddress
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
+
+def is_list(value):
+    return isinstance(value, list)
+
+def exclude_elements(base_array, exclude_array):
+    new_array = base_array[:]
+    for elem in exclude_array:
+        while elem in new_array:
+            new_array.remove(elem)
+    return new_array
 
 def carregar_json_arquivo(caminho):
     try:
@@ -33,6 +44,10 @@ def carregar_json(caminho):
 
 def processar_template(nome_template, variaveis, diretorio_template):
     env = Environment(loader=FileSystemLoader(diretorio_template))
+    env.globals.update(ipaddress=ipaddress)
+    env.filters['exclude'] = exclude_elements
+    env.filters['is_list'] = is_list
+   
     try:
         template = env.get_template(nome_template)
     except TemplateNotFound:
